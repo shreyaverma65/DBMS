@@ -1,4 +1,11 @@
 
-[tool.vercel]
-entrypoint = "backend.app:app"
+[project]
+name = "luggage-claim-system"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = [
+    "Flask>=3.0",
+]
 
+[tool.vercel]
+entrypoint = "backend/app.py"
