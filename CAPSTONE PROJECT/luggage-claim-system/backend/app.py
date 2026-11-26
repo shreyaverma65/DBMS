@@ -209,13 +209,13 @@ def staff_required(fn):
 
     @login_required
 
-    def wrapper(*a, kw):
+    def wrapper(*a, **kw):
 
         if g.user["role"] not in STAFF_ROLES:
 
             raise ApiError("Staff access required.", 403)
 
-        return fn(*a, kw)
+        return fn(*a, **kw)
 
     return wrapper
 
