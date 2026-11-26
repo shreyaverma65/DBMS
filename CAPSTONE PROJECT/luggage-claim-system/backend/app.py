@@ -185,7 +185,7 @@ def login_required(fn):
 
     @wraps(fn)
 
-    def wrapper(*a, kw):
+    def wrapper(*a, **kw):
 
         user = current_user()
 
@@ -195,7 +195,7 @@ def login_required(fn):
 
         g.user = user
 
-        return fn(*a, kw)
+        return fn(*a, **kw)
 
     return wrapper
 
